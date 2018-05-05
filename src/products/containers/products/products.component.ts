@@ -27,7 +27,7 @@ import { Pizza } from '../../models/pizza.model';
         </pizza-item>
       </div>
     </div>
-  `,
+  `
 })
 export class ProductsComponent implements OnInit {
   pizzas$: Observable<Pizza[]>;
