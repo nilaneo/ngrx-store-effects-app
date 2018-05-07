@@ -22,16 +22,16 @@ import * as fromServices from './services';
 export const ROUTES: Routes = [
   {
     path: '',
-    component: fromContainers.ProductsComponent,
-  },
-  {
-    path: ':id',
-    component: fromContainers.ProductItemComponent,
+    component: fromContainers.ProductsComponent
   },
   {
     path: 'new',
-    component: fromContainers.ProductItemComponent,
+    component: fromContainers.ProductItemComponent
   },
+  {
+    path: ':pizzasId',
+    component: fromContainers.ProductItemComponent
+  }
 ];
 
 @NgModule({
@@ -41,10 +41,10 @@ export const ROUTES: Routes = [
     HttpClientModule,
     RouterModule.forChild(ROUTES),
     StoreModule.forFeature('products', reducers),
-    EffectsModule.forFeature(effects),
+    EffectsModule.forFeature(effects)
   ],
   providers: [...fromServices.services],
   declarations: [...fromContainers.containers, ...fromComponents.components],
-  exports: [...fromContainers.containers, ...fromComponents.components],
+  exports: [...fromContainers.containers, ...fromComponents.components]
 })
 export class ProductsModule {}
