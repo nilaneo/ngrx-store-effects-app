@@ -29,7 +29,7 @@ export const ROUTES: Routes = [
     component: fromContainers.ProductItemComponent
   },
   {
-    path: ':pizzasId',
+    path: ':pizzaId',
     component: fromContainers.ProductItemComponent
   }
 ];
