@@ -17,11 +17,11 @@ export function reducer(
   state = initialState,
   action: fromPizzas.PizzaAction
 ): PizzaState {
-  switch(action.type) {
+  switch (action.type) {
     case fromPizzas.LOAD_PIZZAS: {
       return {
         ...state,
-        loading: true,
+        loading: true
       };
     }
 
@@ -29,14 +29,14 @@ export function reducer(
       const pizzas = action.payload;
 
       const entities = pizzas.reduce(
-        (entities: {[id: number]: Pizza }, pizza: Pizza) => {
+        (entities: { [id: number]: Pizza }, pizza: Pizza) => {
           return {
             ...entities,
-            [pizza.id]: pizza,
-          }
+            [pizza.id]: pizza
+          };
         },
         {
-          ... state.entities,
+          ...state.entities
         }
       );
 
@@ -44,7 +44,7 @@ export function reducer(
         ...state,
         loading: false,
         loaded: true,
-        entities,
+        entities
       };
     }
 
@@ -52,7 +52,19 @@ export function reducer(
       return {
         ...state,
         loading: false,
-        loaded: false,
+        loaded: false
+      };
+    }
+
+    case fromPizzas.CREATE_PIZZA_SUCCESS: {
+      const pizza = action.payload;
+      const entities = {
+        ...state.entities,
+        [pizza.id]: pizza
+      };
+      return {
+        ...state,
+        entities
       };
     }
   }
