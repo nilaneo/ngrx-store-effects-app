@@ -91,7 +91,7 @@ export class PizzasEffects {
         pizza =>
           new fromRoot.Go({
             path: ['/products']
-          })git
+          })
       )
     );
 }
