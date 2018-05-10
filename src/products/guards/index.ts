@@ -1,5 +1,9 @@
-import { PizzasGuard } from './pizzas.quard';
+import { PizzasGuard } from './pizzas.guard';
+import { ToppingsGuard } from './toppings.guard';
+import { PizzaExistsGuard } from './pizza-exists.guard';
 
-export const guards: any[] = [PizzasGuard];
+export const guards: any[] = [PizzasGuard, ToppingsGuard, PizzaExistsGuard];
 
-export * from './pizzas.quard';
+export * from './pizzas.guard';
+export * from './toppings.guard';
+export * from './pizza-exists.guard';
