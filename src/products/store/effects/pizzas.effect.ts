@@ -22,7 +22,7 @@ export class PizzasEffects {
       return this.pizzaService
         .getPizzas()
         .pipe(
-          map(pizzas => new pizzaActions.LoadPizzasSucces(pizzas)),
+          map(pizzas => new pizzaActions.LoadPizzasSuccess(pizzas)),
           catchError(error => of(new pizzaActions.LoadPizzasFail(error)))
         );
     })
