@@ -44,7 +44,7 @@ export const getPizzasLoaded = createSelector(
   fromPizzas.getPizzasLoaded
 );
 
-export const getPizzasLoding = createSelector(
+export const getPizzasLoading = createSelector(
   getPizzaState,
   fromPizzas.getPizzasLoading
 );
